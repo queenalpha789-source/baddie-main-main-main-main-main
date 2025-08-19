@@ -37,7 +37,7 @@ const socialLinks: SocialLink[] = [
 
 export const SocialLinks = () => {
   return (
-    <div className="flex justify-center items-center gap-4 sm:gap-6 mt-4 px-4">
+    <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 px-4 max-w-4xl mx-auto">
       {socialLinks.map((link) => {
         const IconComponent = link.icon;
         return (
@@ -45,10 +45,11 @@ export const SocialLinks = () => {
             key={link.name}
             variant="ghost"
             size="default"
+            className={`group bg-black/20 border border-white/30 text-white hover:bg-white/10 hover:scale-105 transition-all duration-300 hover:shadow-neon text-sm px-3 sm:px-4 py-2 rounded-full ${link.color}`}
             className={`group bg-black/20 border border-white/30 text-white hover:bg-white/10 hover:scale-105 transition-all duration-300 hover:shadow-neon text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-full ${link.color}`}
             onClick={() => window.open(link.url, '_blank')}
           >
-            <IconComponent className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+            <IconComponent className="mr-1 sm:mr-2 h-4 w-4" />
             {link.name}
           </Button>
         );
